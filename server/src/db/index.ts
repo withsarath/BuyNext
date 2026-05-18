@@ -4,7 +4,7 @@ import * as schema from "./schema";
 import { ENV } from "../config/env";
 
 if (!ENV.DATABASE_URL) {
-  throw new Error("DATABASE_URL is missing at environment variables");
+  throw new Error("DATABASE_URL is missing at environment variable");
 }
 const pool = new Pool({ connectionString: ENV.DATABASE_URL });
 
