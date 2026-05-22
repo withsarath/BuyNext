@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
 "scripts": {
   "build": "pnpm --prefix server install && pnpm --prefix client install && pnpm --prefix client build && pnpm --prefix server build",
   "start": "pnpm --prefix server run db:push && pnpm --prefix server start"
