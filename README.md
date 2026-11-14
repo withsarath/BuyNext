@@ -71,12 +71,6 @@ Build both apps from root:
 pnpm build
 ```
 
-This runs:
-- install server dependencies
-- install client dependencies
-- build client
-- build server
-
 ## Start (Production Mode)
 From root:
 
