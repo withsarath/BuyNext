@@ -231,9 +231,7 @@ function HomePage() {
                 Browse products
               </Link>
             </div>
-
               {/* Exepremental code */}
-              
             {/* {products && (
               <div className="mt-8 flex gap-10 justify-center lg:justify-start">
                 <div>
