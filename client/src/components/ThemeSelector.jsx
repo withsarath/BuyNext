@@ -39,9 +39,9 @@ const THEMES = [
 function ThemeSelector() {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") || "lofi";
+      return localStorage.getItem("theme") || "synthwave";
     }
-    return "lofi";
+    return "synthwave";
   });
 
   useEffect(() => {

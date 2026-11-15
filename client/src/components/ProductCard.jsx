@@ -9,25 +9,27 @@ const ProductCard = ({ product }) => {
   return (
     <Link
       to={`/product/${product.id}`}
-      className="card bg-base-300 hover:bg-base-200 transition-colors"
+      className="group card bg-base-200 border border-base-300 hover:shadow-lg transition-shadow"
     >
       <figure className="px-4 pt-4">
-        <img
-          src={product.imageUrl}
-          alt={product.title}
-          className="rounded-xl h-40 w-full object-cover"
-        />
+        <div className="w-full overflow-hidden rounded-xl">
+          <img
+            src={product.imageUrl}
+            alt={product.title}
+            className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
       </figure>
-      <div className="card-body p-4">
+      <div className="card-body p-4 gap-2">
         <h2 className="card-title text-base">
-          {product.title}
+          <span className="line-clamp-1">{product.title}</span>
           {isNew && <span className="badge badge-secondary badge-sm">NEW</span>}
         </h2>
-        <p className="text-sm text-base-content/70 line-clamp-2">{product.description}</p>
+        <p className="text-sm text-base-content/70 line-clamp-2">
+          {product.description}
+        </p>
 
-        <div className="divider my-1"></div>
-
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between border-t border-base-300 pt-3 mt-1">
           {product.user && (
             <div className="flex items-center gap-2">
               <div className="avatar">
@@ -35,12 +37,14 @@ const ProductCard = ({ product }) => {
                   <img src={product.user.imageUrl} alt={product.user.name} />
                 </div>
               </div>
-              <span className="text-xs text-base-content/60">{product.user.name}</span>
+              <span className="text-xs text-base-content/60">
+                {product.user.name}
+              </span>
             </div>
           )}
           {product.comments && (
             <div className="flex items-center gap-1 text-base-content/50">
-              <MessageCircleIcon className="size-3" />
+              <MessageCircleIcon className="size-3.5" />
               <span className="text-xs">{product.comments.length}</span>
             </div>
           )}
